@@ -29,6 +29,7 @@ body {
   line-height: 1.6;
   color: var(--text);
   background: linear-gradient(135deg, var(--velvet-deep) 0%, var(--velvet-mid) 45%, var(--velvet-light) 100%);
+  min-height: 100vh;
 }
 
 a:hover,
@@ -42,6 +43,12 @@ a:focus-visible,
 .btn:focus-visible {
   outline: 3px solid var(--accent-dark);
   outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .skip-link {
@@ -100,6 +107,7 @@ nav a:focus-visible {
   color: var(--text);
   text-align: center;
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
 
 .hero-content {
@@ -137,7 +145,7 @@ nav a:focus-visible {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   margin: 0.3rem 0 1rem;
   color: var(--velvet-deep);
 }
@@ -186,8 +194,6 @@ nav a:focus-visible {
   border: 1px solid var(--border);
   border-radius: 1rem;
   box-shadow: 0 10px 28px var(--shadow);
-
-
 }
 
 .card h3 {
