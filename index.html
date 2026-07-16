@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Focus Strike is a reaction speed game that challenges players to beat their previous scores."
+    >
+
+    <title>Focus Strike | Reaction Speed Game</title>
+
+    <link rel="stylesheet" href="./src/style.css">
+
+    <script src="./src/script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <section class="game-card">
+
+            <header class="game-header">
+                <div>
+                    <p class="eyebrow">Reaction Speed Challenge</p>
+                    <h1>Focus Strike</h1>
+                    <p class="game-description">
+                        Test your speed and accuracy. Click each target before
+                        it moves and try to beat your previous score.
+                    </p>
+                </div>
+
+                <div class="game-status" id="gameStatus">
+                    Ready
+                </div>
+            </header>
+
+            <section class="player-section">
+
+                <div class="input-group">
+                    <label for="playerName">Player name</label>
+
+                    <input
+                        type="text"
+                        id="playerName"
+                        placeholder="Enter your name"
+                        maxlength="20"
+                        autocomplete="off"
+                    >
+                </div>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="startButton"
+                >
+                    Start Game
+                </button>
+
+            </section>
+
+            <section class="scoreboard">
+
+                <article class="score-card">
+                    <span class="score-label">Time</span>
+                    <strong id="timeDisplay">30</strong>
+                </article>
+
+                <article class="score-card">
+                    <span class="score-label">Current Score</span>
+                    <strong id="scoreDisplay">0</strong>
+                </article>
+
+                <article class="score-card">
+                    <span class="score-label">Last Score</span>
+                    <strong id="lastScoreDisplay">0</strong>
+                </article>
+
+                <article class="score-card highlight-card">
+                    <span class="score-label">Best Score</span>
+                    <strong id="bestScoreDisplay">0</strong>
+                </article>
+
+            </section>
+
+            <section
+                class="game-board"
+                id="gameBoard"
+                aria-label="Game playing area"
+            >
+
+                <div class="start-message" id="startMessage">
+                    <h2>Are you ready?</h2>
+
+                    <p>
+                        Enter your name and press Start Game.
+                        You will have 30 seconds to click as many targets
+                        as possible.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="target"
+                    id="target"
+                    aria-label="Click target"
+                >
+                    <span></span>
+                </button>
+
+            </section>
+
+            <section class="instructions">
+                <h2>How to play</h2>
+
+                <div class="instruction-list">
+
+                    <article>
+                        <span>01</span>
+                        <p>Enter your name to load your saved scores.</p>
+                    </article>
+
+                    <article>
+                        <span>02</span>
+                        <p>Click the moving target before it changes position.</p>
+                    </article>
+
+                    <article>
+                        <span>03</span>
+                        <p>Faster reactions earn more points.</p>
+                    </article>
+
+                </div>
+            </section>
+
+        </section>
+
+        <div class="result-modal" id="resultModal">
+
+            <div class="modal-content">
+
+                <p class="modal-eyebrow">Game Complete</p>
+
+                <h2 id="resultHeading">
+                    Time is up
+                </h2>
+
+                <p id="resultMessage">
+                    Your final score is 0.
+                </p>
+
+                <div class="modal-score">
+                    <span>Final Score</span>
+                    <strong id="finalScoreDisplay">0</strong>
+                </div>
+
+                <button
+                    type="button"
+                    class="primary-button"
+                    id="playAgainButton"
+                >
+                    Play Again
+                </button>
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="closeModalButton"
+                >
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
