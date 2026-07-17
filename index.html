@@ -8,7 +8,7 @@
     >
     <meta
         name="description"
-        content="Focus Strike is a reaction speed game that challenges players to beat their previous scores."
+        content="Focus Strike is a fast-paced reaction game that challenges players to beat their previous scores."
     >
     <title>Focus Strike | Reaction Speed Game</title>
     <link rel="stylesheet" href="./src/style.css">
@@ -27,25 +27,41 @@
 
         <section class="game-card">
 
+            <!-- GAME HEADER -->
             <header class="game-header">
+
                 <div>
-                    <p class="eyebrow">Reaction Speed Challenge</p>
+                    <p class="eyebrow">
+                        Reaction Speed Challenge
+                    </p>
+
                     <h1>Focus Strike</h1>
+
                     <p class="game-description">
-                        Test your speed and accuracy. Click each target before
-                        it moves and try to beat your previous score.
+                        Test your reaction speed, accuracy and focus.
+                        Hit as many targets as possible before the timer ends
+                        and try to beat your previous score.
                     </p>
                 </div>
 
-                <div class="game-status" id="gameStatus">
+                <div
+                    class="game-status"
+                    id="gameStatus"
+                >
                     Ready
                 </div>
+
             </header>
 
+
+            <!-- PLAYER DETAILS -->
             <section class="player-section">
 
                 <div class="input-group">
-                    <label for="playerName">Player name</label>
+
+                    <label for="playerName">
+                        Player name
+                    </label>
 
                     <input
                         type="text"
@@ -54,6 +70,7 @@
                         maxlength="20"
                         autocomplete="off"
                     >
+
                 </div>
 
                 <button
@@ -66,87 +83,156 @@
 
             </section>
 
+
+            <!-- SCOREBOARD -->
             <section class="scoreboard">
 
                 <article class="score-card">
-                    <span class="score-label">Time</span>
-                    <strong id="timeDisplay">30</strong>
+                    <span class="score-label">
+                        Time
+                    </span>
+
+                    <strong id="timeDisplay">
+                        30
+                    </strong>
                 </article>
 
                 <article class="score-card">
-                    <span class="score-label">Current Score</span>
-                    <strong id="scoreDisplay">0</strong>
+                    <span class="score-label">
+                        Score
+                    </span>
+
+                    <strong id="scoreDisplay">
+                        0
+                    </strong>
                 </article>
 
                 <article class="score-card">
-                    <span class="score-label">Last Score</span>
-                    <strong id="lastScoreDisplay">0</strong>
+                    <span class="score-label">
+                        Combo
+                    </span>
+
+                    <strong id="comboDisplay">
+                        0x
+                    </strong>
+                </article>
+
+                <article class="score-card">
+                    <span class="score-label">
+                        Accuracy
+                    </span>
+
+                    <strong id="accuracyDisplay">
+                        100%
+                    </strong>
+                </article>
+
+                <article class="score-card">
+                    <span class="score-label">
+                        Last Score
+                    </span>
+
+                    <strong id="lastScoreDisplay">
+                        0
+                    </strong>
                 </article>
 
                 <article class="score-card highlight-card">
-                    <span class="score-label">Best Score</span>
-                    <strong id="bestScoreDisplay">0</strong>
+                    <span class="score-label">
+                        Best Score
+                    </span>
+
+                    <strong id="bestScoreDisplay">
+                        0
+                    </strong>
                 </article>
 
             </section>
 
+
+            <!-- GAME BOARD -->
             <section
                 class="game-board"
                 id="gameBoard"
-                aria-label="Game playing area"
+                aria-label="Focus Strike game playing area"
             >
 
-                <div class="start-message" id="startMessage">
+                <div
+                    class="start-message"
+                    id="startMessage"
+                >
+
                     <h2>Are you ready?</h2>
 
                     <p>
                         Enter your name and press Start Game.
-                        You will have 30 seconds to click as many targets
-                        as possible.
+                        Hit as many targets as possible while maintaining
+                        your accuracy and building your combo.
                     </p>
-                </div>
 
-                <button
-                    type="button"
-                    class="target"
-                    id="target"
-                    aria-label="Click target"
-                >
-                    <span></span>
-                </button>
+                </div>
 
             </section>
 
+
+            <!-- GAME INSTRUCTIONS -->
             <section class="instructions">
+
                 <h2>How to play</h2>
 
                 <div class="instruction-list">
 
                     <article>
                         <span>01</span>
-                        <p>Enter your name to load your saved scores.</p>
+
+                        <p>
+                            Click the targets before they disappear
+                            from the game board.
+                        </p>
                     </article>
 
                     <article>
                         <span>02</span>
-                        <p>Click the moving target before it changes position.</p>
+
+                        <p>
+                            Consecutive hits build your combo and
+                            increase the number of points you earn.
+                        </p>
                     </article>
 
                     <article>
                         <span>03</span>
-                        <p>Faster reactions earn more points.</p>
+
+                        <p>
+                            Clicking an empty area reduces your score,
+                            resets your combo and lowers your accuracy.
+                        </p>
                     </article>
 
                 </div>
+
             </section>
 
         </section>
 
-        <div class="result-modal" id="resultModal">
 
-            <div class="modal-content">
+        <!-- RESULT MODAL -->
+        <section
+            class="result-modal"
+            id="resultModal"
+            aria-hidden="true"
+        >
 
-                <p class="modal-eyebrow">Game Complete</p>
+            <div
+                class="modal-content"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="resultHeading"
+            >
+
+                <p class="modal-eyebrow">
+                    Game Complete
+                </p>
 
                 <h2 id="resultHeading">
                     Time is up
@@ -157,8 +243,15 @@
                 </p>
 
                 <div class="modal-score">
-                    <span>Final Score</span>
-                    <strong id="finalScoreDisplay">0</strong>
+
+                    <span>
+                        Final Score
+                    </span>
+
+                    <strong id="finalScoreDisplay">
+                        0
+                    </strong>
+
                 </div>
 
                 <button
@@ -179,7 +272,7 @@
 
             </div>
 
-        </div>
+        </section>
 
     </main>
 
